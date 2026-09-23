@@ -1,0 +1,19 @@
+# Hermes Agent Data Services
+
+Paid HTTP endpoints for AI agents. Payment is x402-style: pay USDC on Base, then retry with the proof.
+
+## Services
+- GET /api/token-report?chain=&token=  — On-chain report for an ERC-20 (metadata, supply, recent transfer activity, optional pool depth). Chains: base, base-sepolia, robinhood. — price 0.01 USDC
+- GET /api/contract-dd?chain=&token=  — Due-diligence signals for a token contract: dangerous function selectors present in bytecode, owner + renounced?, transfer activity, largest-transfer share. Signals to investigate, not a verdict. — price 0.05 USDC
+- GET /api/pool-risk?chain=&token=  — Pool depth, implied price and constant-product slippage for a given trade size. Give the pool address (or any address holding both tokens) plus a notional. — price 0.02 USDC
+- GET /api/wallet-profile?chain=&token=  — Activity profile for one address on one token: transfers in/out, distinct counterparties, volume, first/last seen inside the scanned window. — price 0.03 USDC
+
+## Pay
+- network: eip155:8453 (base)
+- asset: USDC (0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913)
+- payTo: 0x53Bc9A5fe59223A209d32948075e6AD82ce747cE
+- amount: see the 402 response you get on the first call
+
+## Then
+retry the same URL with: PAYMENT-SIGNATURE: base64({"txHash":"0x…"})
+A proof is single-use and must be from the last 15 minutes.
