@@ -9,6 +9,8 @@ response; nothing is held by the service.
 - Machine-readable catalogue: `https://x402-agent.majighufron.workers.dev/api`
 - Agent instructions: `https://x402-agent.majighufron.workers.dev/llms.txt`
 
+![x402 flow: 402 challenge, paid call returning data, MCP tools list](assets/demo-402-to-200.png)
+
 ## Services
 
 | Service | Price | What you get |
