@@ -82,3 +82,10 @@ list, and the wallet *is* the identity.
 ## License
 
 MIT
+
+## Where to find this service
+
+- x402scan listing: https://www.x402scan.com/server/https%3A%2F%2Fx402-agent.majighufron.workers.dev
+- Merchant page (Poncho): https://tryponcho.com/m/x402-agent.majighufron.workers.dev
+- MCP registry: `io.github.AjiGhufron9999/x402-agent-data` (remote `streamable-http` at `/mcp`)
+- Discovery files: `/openapi.json`, `/.well-known/x402`, `/llms.txt`, `/api/sample` (free)
